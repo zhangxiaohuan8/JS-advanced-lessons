@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	var str = "abc_def_ghi_jkl_mn";
+	//转义字符 \n \" \' \\
+	console.log("abc\ndefghi\\\n\'mn\'");
+	//字符串常用操作
+	var str = "abc_def_ghi_jkl_mn";
+	// str.split("_");
+	console.log(str.split("_"))//["abc","def","ghi","jkl","mn"]
+	// str.split("_",2);
+	console.log(str.split("_",2))//["abc","def"]
+	// str.concat("_opq");
+	console.log(str.concat("_opq"));//abc_def_ghi_jkl_mn_opq
+	// str.substr(4,7);
+	console.log(str.substr(4,7));//def_ghi
+	// str.substring(4,7);
+	console.log(str.substring(4,7));//def
+	// str.slice(2);
+	console.log(str.slice(2));//c_def_ghi_jkl_mn
+	// str.slice(2,5);
+	console.log(str.slice(2,5));//c_d
+	// str.slice(-2);
+	console.log(str.slice(-2));//mn
+	// str.slice(2,-2);
+	console.log(str.slice(2,-2));//c_def_ghi_jkl_
+	// 更多内容参见下一章节
+
+	// str.bold();
+	console.log(str.bold());//加<b>
+	// str.link();
+	console.log(str.link());//加<a>
+	// str.fontcolor("red");
+	console.log(str.fontcolor("red"));//加<font color="red">
+	// str.fontsize(50);
+	console.log(str.fontsize(50));//<font size="50">
+
+	//模式匹配，参加后续正则表达式章节
+</script>
+</html>

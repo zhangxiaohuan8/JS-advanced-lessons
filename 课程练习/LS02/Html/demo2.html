@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	function foo() {
+    	var n = 10;
+    	var m = true;
+    	var str = "Hello World"; // str:"Hello World"存在栈中
+
+    	// obj的引用存在栈中，{value:"Hello World"}存在堆中，通过栈中的变量名obj(访问地址)访问
+   	 	var obj = { value: "Hello World" };
+	};
+	foo();
+
+	//思考 a和b分配在那个区:
+	var a = 23;//window.a分配在栈区
+	var b = 34;//window.b分配在栈区
+	console.log(window.a);
+	console.log(window.b);
+</script>
+</html>
