@@ -1,4 +1,4 @@
-
+ 
 //ES5中无块作用域
 {
     var a = 4;
@@ -16,7 +16,7 @@ var a=2,b=3;
 if(a<b){
     var userId = 234;
 }
-
+console.log(userId);//输出234
 
 
 
@@ -31,5 +31,7 @@ document.onclick = function () {
     var a=2,b=3;
     if(a<b){
         var userId = 234;
+        console.log(userId);//234
     }
 }());
+console.log(userId);//123
