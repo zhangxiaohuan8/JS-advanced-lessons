@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	var tmp = 100;//注意：词法作用域,形成的闭包是不含此行的变量tmp
+	function foo(x) {
+    	// var tmp = 3;//注意：词法作用域，思考：若屏蔽此行，会输出什么？foo之外的tmp是否为闭包的一部分？
+    	return function (y) {
+        	console.log(x + y + (++tmp));
+    	}
+	}
+	var fee = foo(2); // fee 形成了一个闭包
+	fee(10);//16
+	fee(10);//17
+	fee(10);//18
+	/*
+	若屏蔽此行输出113、114、115。foo之外的tmp不是为闭包的一部分
+	 */
+</script>
+</html>
