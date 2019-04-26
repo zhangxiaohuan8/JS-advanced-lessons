@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	//1、非严格模式下，this指向window对象
+	//2、严格模式下，this是undefined
+	//3、this是谁，取决于函数调用的主体
+	function thisTest(){
+		console.log(this);
+		console.log(this==window);
+	}
+	thisTest();
+
+	function thisTest1(){
+		'use strict'
+		console.log(this);
+		return this==undefined?true:false;//判断是否为严格模式
+	}
+	thisTest1();
+
+	var point={
+		x:0;
+		y:0;
+		moveTo:function(x,y){
+			this.x=x;
+			this.y=y;
+		}
+	}
+	//1、直接定义在对象的方法，调用主体就是当前对象。
+	//2、前提没有函数嵌套
+	point.moveTo(10,10);
+
+
+	function Point(x,y){
+		this.x=x;
+		this.y=y;
+		this.moveTo=function(x,y){
+			this.x=x;
+			this.y=y;
+		}
+	}
+	var p=new Point(10,10);
+	//1、this指向函数主体
+	p.moveTo(15,15);
+
+	var objA={name:'AA',x:1};
+	var objB={name:'BB',x:2};
+	function test(m){
+		this.x=m;
+		console.log(this.name);
+		console.log(this.x);
+	}
+	objA.fun=test;
+	objA.fun();
+	/*
+	方法A.call(对象)；
+	切换方法A的调用主体，this指向函数的调用主体
+	方法.call（要切换的调用对象，arg1,arg2,arg3）;
+	方法B.apply（要切换的调用对象，[arg1,arg2,arg3]）;
+	 */
+	objA.fun.call(objB,3);
+
+
+
+	var point={
+		x:0,
+		y:0,
+		moveTo:function(x,y){
+			//解决方法
+			var that=this;//软绑定
+			function moveToX(x){
+				console.log(that);
+				that.x=x;//this指向window，没有指向point
+			}
+			function moveToY(y){
+				that.y=y;
+			}
+			moveToX(x);
+			moveToY(y);
+		}
+	}
+	point.moveTo(10,10);
+	console.log(point);
+	/*
+	对象内部的函数，存在嵌套关系，内部函数的this指向window对象
+	 */
+	
+
+
+	var point ={
+		x:0,
+		y:0,
+		moveTo:function(x,y){
+			function moveToX(){
+				this.x=x;
+			}
+			function moveToY(){
+				this.y=y;
+			} 
+			moveToX.call(this,x);
+			moveToY.call(this,y);
+		}
+	}
+	point.moveTo(10,10);
+	console.log(point);
+
+
+
+	var point ={
+		x:0,
+		y:0,
+		moveTo:function(x,y){
+			function moveToX(){
+				this.x=x;
+			}
+			function moveToY(){
+				this.y=y;
+			} 
+			console.log(moveToX.bind(this));
+			/*
+			函数.bind（对象）切换函数的的调用主体生成了一个新的函数，并且不会立即执行的，如果想要立即执行，加小括号
+			 */
+			moveToX.bind(this)();
+			moveToY.bind(this)();//硬绑定
+		}
+	}
+	point.moveTo(2,2);
+	console.log(point);
+	console.log(Function.prototype);
+</script>
+</html> 
