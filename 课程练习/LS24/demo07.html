@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.imgborder{
+			border:5px solid red;
+		}
+	</style>
+</head>
+<body>
+	<img src="img1.jpg" id="img1">
+	<button id="btn">改变属性</button>
+	<button id="btn1">改变class</button>
+</body>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+	$("#btn").click(function(){
+		$("#img1").attr("src","img2.jpg");
+		$("#img1").attr("title","这是一张图片");
+		alert($("#img1").attr("title"));
+
+		$("#img1").after("class","");
+		//移除特定属性
+		$("#img1").removeAttr("title")
+	})
+	$("#btn1").click(function(){
+		$("#img1").addClass("imgborder");
+		$("#img1").removeClass("imgborder");
+	})
+	$("#img1").mouseover(function(){
+		$("#img1").addClass("imgborder");
+	})
+	$("#img1").mouseout(function(){
+		$("#img1").removeClass("imgborder");
+	})
+</script>
+</html>

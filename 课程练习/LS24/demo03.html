@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		div{
+			background:#ddd;
+			margin-top:10px;
+		}
+	</style>
+</head>
+<body>
+	<div>层1</div>
+	<div>层2</div>
+	<div>层3</div>
+</body>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+	$("div").mouseover(function(){
+		$(this).css("background",'blue');
+	})
+	$("div").mouseout(function(){
+		$(this).css("background",'gray');
+	})
+	$("div").click(function(){
+		$(this).css("background",'red');
+	})
+</script>
+</html>

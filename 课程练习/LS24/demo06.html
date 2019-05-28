@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>用户名</td>
+			<td>
+				<input type="text" name="username" id="username">
+				<span class="error"></span>
+			</td>
+		</tr>
+		<tr>
+			<td>密码</td>
+			<td>
+				<input type="password" name="pwd" id="pwd">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td>
+				<input type="button" value="登录">
+			</td>
+		</tr>
+	</table>
+</body>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+	/*
+		val()用于设置或者获取表单元素的value值
+		html()用于设置或者获取双标记标签元素的标签内部的html内容
+		css()用于设置选中元素的样式css("样式名","样式值")
+		css({"样式名":"样式值"})
+	 */
+	$("#username").blur(function(){
+		var inputVal=$(this).val();
+		if(inputVal==''){
+			$(".error").html("用户名不能为空");
+			$(".error").css({
+				"color":"purple",
+				"font-size":"30px"
+			});
+
+		}
+	})
+</script>
+</html>

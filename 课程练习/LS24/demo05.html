@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#consider{
+			height:400px;
+			width:1000px;
+			margin:0 auto;
+			border: 1px solid red;
+		}
+		img{
+			width:150px;
+		}
+		#btnlist{
+			width:100px;
+			margin:0 auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="consider">
+		<img src="img1.jpg" id="img1">
+	</div>
+	<div id="btnlist">
+		<button id="after">after</button>
+		<button id="insertafter">insertafter</button>
+	</div>	
+	</body>
+</body>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+	/*
+		1、向特定元素的后面插入新的节点
+		after()  insertafter()
+		2、向特定元素的前面插入新的节点  before insertafter()
+		3、向特定元素标签内部最后的位置添加新的节点
+		4、想特定元素内部最前面的位置添加新的节点  prepend() prependTo()
+	 */
+	$("#after").click(function(){
+		var $img2=$("<img src='img1.jpg'/>");
+		$("#img1").after($img2);
+	})
+	$("#insertafter").click(function(){
+		var $img2=$("<img src='img1.jpg'/>");
+		$img2.insertAfter($("#img1"));
+	})
+</script>
+</html>
