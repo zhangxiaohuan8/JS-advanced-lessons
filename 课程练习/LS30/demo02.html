@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+        arr1.copyWithin(target,start,end)
+        target:复制的目标位置
+        start:复制元素的起始位置
+        end：复制元素的结束位置
+    */
+    var arr1=[1,2,3,4,5,6];
+    arr1.copyWithin(0,3,5);
+
+
+/*
+    遍历数组中的元素，验证是否满足回调函数的验证条件
+    返回满足条件的的第一个数组元素
+*/
+    var array1 = [5, 12, 8, 130, 44];
+    var found = array1.find(function(element) {
+        return element > 10;
+    });
+
+    console.log(found);
+    let elIndex=array1g.findIndex(function(element){
+        return element>29
+    })
+    console.log(elIndex);
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let [x,y]=['a','b'];
+    [y,x]=[x,y];
+    console.log(x,y);
+
+
+
+    let json={
+        'username':'zhangsan',
+        'courseList':['高等数学','大学英语'],
+        'age':20
+    }
+    let jsonStr=JSON.stringify(json);
+    console.log(jsonStr);
+    json1=JSON.parse(jsonStr);
+
+    let {username}=json1;
+    console.log(username);
+</script>
+</html>

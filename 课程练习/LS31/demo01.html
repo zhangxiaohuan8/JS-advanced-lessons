@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    let s1=Symbol("s1");
+    let s2=Symbol("s2");
+    let s3=Symbol("s1");
+    console.log(s1==s3);
+
+    /*
+        Symbol作为对象的属性名，永远不会重复
+        对象[Symbol]{
+            [Symbol]:属性值
+        }
+    */
+    let obj={};
+    obj[s1]="hello";
+    let obj1={
+        [s1]:"world"
+    }
+
+    console.log(obj[s1]);
+</script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*子类继承父类extends,在子类的构造函数里面super指向父类的构造函数，继承的子类构造函数必须在super()调用后才能使用this
+    super在子类的圆形方法中指向父类的prototype*/
+    class Parent{
+        constructor(x,y){
+            this.x=x;
+            tjis.y=y;
+        }
+        parentshow(){
+            console.log('hello');
+        }
+    }
+    class Child extends Parent{
+        constrcutor(x,y,z){
+            super(x,y);
+            this.z=z;
+        }
+        show(){
+            super.parentshow();
+            console.log(this);
+        }
+    }
+    let c1=new Child(1,2,3);
+    console.log(c1);
+</script>
+</html>

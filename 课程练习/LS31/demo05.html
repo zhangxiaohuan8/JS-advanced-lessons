@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*静态方法通过类进行调用，静态方法的内部this指向类本身*/
+    class  Point{
+        constructor(){
+            this.x=1;
+        }
+        static showPoint(){
+            console.log(this);
+        }
+    } 
+    Point.showPoint();
+</script>
+</html>
