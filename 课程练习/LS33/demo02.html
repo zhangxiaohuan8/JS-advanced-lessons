@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let arr1=[1,3,4,5,6];
+    for(let i of arr1){
+        console.log(arr1[i]);
+
+    }
+    let m1=new Map([1,2,3,1,4]);
+    for(let i of m1){
+        console.log(m1[i]);
+    }
+    /*判断数据结构能否被便利器遍历*/
+    let arr2=[1,2,3];
+    let person={"name":"zhangsan","age":20};
+    console.log(arr2[Symbol.iterator]); 
+</script>
+</html>
