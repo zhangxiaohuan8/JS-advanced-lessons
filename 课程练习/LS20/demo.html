@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	/*
+		/正则表达式的文本部分/正则表达式的标识符
+		[xyz]匹配中括号中任意的字符
+		标识符：
+		g全局的检索,获取的所有的匹配项还是只获取第一个
+		i表示是否忽略大小写
+	 */
+	// var reg1 = /[bcf]at/g;
+	// var reg2=new RegExp(/bcf/at,'gi');
+	// var reg3=new RegExp('[bcf]at','gi');
+	// var str='fat cat bat Fat ojiidd lppqw';
+	// var arr=str.match(reg1);
+	// console.log(arr);
+	
+
+
+	// var reg1=/adf/gi;
+	// var str='abcdef adf kil';
+	// console.log(str.match(reg1));
+	// var str='abcdef adf ad kil adfff';
+	// var reg2=/adf*/gi;
+	// console.log(str.match(reg2));
+	
+	// var str='abcdef adf ad kil adfff';
+	// var reg2=/a.c/gi;
+	// console.log(str.match(reg2));
+
+
+	/*
+		字符类别
+		\d表示的是任意的阿拉伯数字[0-9]
+		\D表示在特定位置上不是一个阿拉伯数字[^0-9]
+	 */
+	// var reg4=/a\dc/gi;
+	// var reg4_2=/a\Dc/gi;
+	// var str4='a2c a3c abc';
+	// console.log(str4.match(reg4));
+	// console.log(str4.match(reg4_2));
+	
+	// var str='atf btf ktf'
+	// var reg=/^[abc]tf/gi;
+	// str.match(reg);
+	/*
+		^匹配开始的
+	 */
+	// var reg1=/^a[0-9]/gi;
+	// str='a1b2c3';
+	// str.match(reg1);
+	/*
+		match定义在字符串上,test定义在正则表达式上
+	 */
+	// var reg1=/[0-9]z$/gi;
+	// var str='abcd9z';
+	// var str2='bcfbdfdfd9';
+	// console.log(str.match(reg1));
+	// console.log(str2.match(reg1));
+	// console.log(reg1.test(str));
+	
+	/*
+		数量词：
+		?表示之前的字符出现0次或者一次
+		abc是abc分别出现一次    ab表示ab出现1次，c出现0次
+	 */
+
+	// var reg1=/abc?/gi;
+	// var str1='abc ab kkk';
+	// console.log(str1.replace(reg1,'x'));
+	
+
+	/*
+		+表示之前的字符出现1次或多次
+	 */
+	// var reg2=/abc+/gi;
+	// var str2='abc abccc abcccccc ab';
+	// console.log(str2.match(reg2));
+	
+	/*
+		大括号里表示出现次数
+	 */
+
+	// var reg3=/abc{1,3}/gi;
+	// var str3='abc abcc abccc abcccc';
+	// console.log(str3.replace(reg3,'x'));
+	
+
+
+
+	/*
+		\d数字
+		、s空格
+		.任意一个字符
+		、w[A-za-z0-9]
+	 */
+	var reg=/d.\s/gi;
+	/*
+		
+	 */
+	var reg=/[xyz]a/gi;
+	var str1='xabjiya';
+	str1.replace(reg,'m');
+	/*
+		^a以特定字符起始
+		b$以特定字符结束
+
+	 */
+	/*
+	量词
+	a*字符出现0次多次
+	a+出现1次多次
+	a？出现一次0次
+	 */
+	
+	 /*
+	 分组可以看做当前正则表达式的子规则，分组匹配得到的内容，可以再exec方法调用的返回结果查看
+	  */
+
+	var reg1=/(abc)\d/gi;
+	var str='abc1efg2';
+	var result=reg1.exec(str);
+	console.log(result);
+
+
+/*
+	反向应用，通过\m来引用前面出现的分组m表示前面出现的第几个分组
+ */
+
+	var reg2=/(\d)a\1/gi;
+	var reg3=/(\d)a(\d)/gi;
+
+	var str2='2a1sss';
+	str2.replace(reg2,'x');
+
+
+
+
+
+	/*
+		string.prototype
+		str.replace(正则表达式，‘替换成的内容’);
+		str.match(正则表达式)
+		返回值是一个数组或null
+		【整个正则匹配到的内容，分组匹配的内容，开始匹配位置的索引】
+		str.search(正则表达式)
+		在str当中检索符合正则表达式规则的内容
+		如果检索到了返回其第一个字符出现的位置，如果没有返回-1
+		RegExp.prototype
+		reg.test(字符串)
+		验证字符串是否符合正则表达式规则，符合返回true,不符合返回FALSE
+		reg.exec(字符串)
+	 */
+	var reg=/(ss)abc\d/gi;
+	var str='kkafd ssabc2';
+	var result=str.match(reg);
+	console.log(result);
+
+
+
+
+
+
+	/*
+		验证压缩文件格式
+	 */
+	var reg=/(.*)\.(rar|zip|7zip|tgz)$/;
+	/*
+		(.+)压缩文件的名字
+		\.对.进行转义，表示普通字符(rar|zip|7zip|tgz)从其中任意一个类型
+		$表示以前面的分组结尾
+	 */
+	var reg1=/^#[a-fA-F0-9]{6}$/
+	/*
+	^#表示的是以#开头
+	[a-fA-F0-9]表示集合，从其中任取一个字符a-f A-F 0-9
+	{6}表示之前的字符出现6次
+	$必须以前面的字符结尾
+	 */
+	
+
+
+
+	try{
+//监听的代码块
+	}catch(error){
+//不活到异常后的处理
+	}finally{
+//无论是否捕捉到异常都会执行
+	}
+</script>
+</html>
